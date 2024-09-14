@@ -1,0 +1,5 @@
+{
+    "name": "user",
+    "properties_types": ["int id", "String name"],
+    "properties": ["id", "name"]
+}
