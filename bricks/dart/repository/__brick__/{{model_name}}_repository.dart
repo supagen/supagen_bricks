@@ -2,7 +2,7 @@ import 'package:supabase_flutter/supabase_flutter.dart';
 import '../models/{{model_name}}.dart';
 
 class {{model_name.pascalCase()}}Repository {
-  Future<List<{{model_name.pascalCase()}}>> findAll({required int id}) async {
+  Future<List<{{model_name.pascalCase()}}>> findAll() async {
     final response = await Supabase.instance.client.from('{{table_name}}').select();
 
     return response.map((e) => {{model_name.pascalCase()}}.fromJson(e)).toList();
