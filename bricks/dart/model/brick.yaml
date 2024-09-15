@@ -1,0 +1,19 @@
+name: model
+description: A new brick created with the Mason CLI.
+
+version: 1.0.0
+
+environment:
+  mason: ">=0.1.0-dev.58 <0.1.0"
+
+vars:
+  name:
+    type: string
+    description: The name of the model
+    prompt: What is the name of the model?
+  properties:
+    type: array
+    description: List of property fields
+  properties_types:
+    type: array
+    description: List of property with data types
