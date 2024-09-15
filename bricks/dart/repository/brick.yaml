@@ -1,0 +1,17 @@
+name: repository
+description: A new brick created with the Mason CLI.
+
+version: 0.1.0+1
+
+environment:
+  mason: ">=0.1.0-dev.58 <0.1.0"
+
+vars:
+  model_name:
+    type: string
+    description: The name of the model.
+    default: supagen
+  table_name:
+    type: string
+    description: The name of the table.
+    default: supagens
