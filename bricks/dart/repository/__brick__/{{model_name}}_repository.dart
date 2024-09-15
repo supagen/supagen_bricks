@@ -18,15 +18,15 @@ class {{model_name.pascalCase()}}Repository {
     return {{model_name.pascalCase()}}.fromJson(response);
   }
 
-  Future<void> create({required {{model_name.pascalCase()}} {{model_name}}}) async {
-    await Supabase.instance.client.from('{{table_name}}').insert({{model_name}}.toJson());
+  Future<void> create({required {{model_name.pascalCase()}} {{model_name.camelCase()}}}) async {
+    await Supabase.instance.client.from('{{table_name}}').insert({{model_name.camelCase()}}.toJson());
   }
 
-  Future<void> update({required {{model_name.pascalCase()}} {{model_name}}}) async {
+  Future<void> update({required {{model_name.pascalCase()}} {{model_name.camelCase()}}}) async {
     await Supabase.instance.client
         .from('{{table_name}}')
-        .update({{model_name}}.toJson())
-        .eq('id', {{model_name}}.id);
+        .update({{model_name.camelCase()}}.toJson())
+        .eq('id', {{model_name.camelCase()}}.id);
   }
 
   Future<void> delete({required int id}) async {
