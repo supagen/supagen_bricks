@@ -12,8 +12,12 @@ class {{name.pascalCase()}} { {{#properties_types}}
   }
 
   Map<String, dynamic> toJson() {
-    return { {{#properties}}
+    final json = { {{#properties}}
       '{{..snakeCase()}}': {{.}},{{/properties}}
     };
+
+    json.removeWhere((key, value) => value == null);
+
+    return json;
   }
 }
