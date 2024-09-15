@@ -22,11 +22,11 @@ class {{model_name.pascalCase()}}Repository {
     await Supabase.instance.client.from('{{table_name}}').insert({{model_name.camelCase()}}.toJson());
   }
 
-  Future<void> update({required {{model_name.pascalCase()}} {{model_name.camelCase()}}}) async {
+  Future<void> update({required int id, required {{model_name.pascalCase()}} {{model_name.camelCase()}}}) async {
     await Supabase.instance.client
         .from('{{table_name}}')
         .update({{model_name.camelCase()}}.toJson())
-        .eq('id', {{model_name.camelCase()}}.id);
+        .eq('id', id);
   }
 
   Future<void> delete({required int id}) async {
