@@ -7,13 +7,13 @@ class {{name.pascalCase()}} { {{#properties_types}}
 
   factory {{name.pascalCase()}}.fromJson(Map<String, dynamic> json) {
     return {{name.pascalCase()}}({{#properties}}
-      json['{{.}}'],{{/properties}}
+      json['{{..snakeCase()}}'],{{/properties}}
     );
   }
 
   Map<String, dynamic> toJson() {
     return { {{#properties}}
-      '{{.}}': {{.}},{{/properties}}
+      '{{..snakeCase()}}': {{.}},{{/properties}}
     };
   }
 }
